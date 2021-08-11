@@ -1,0 +1,783 @@
+/* font-family: 'Roboto', sans-serif;
+font-family: 'Roboto Condensed',
+sans-serif; */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    max-width: 1440px;
+    margin: 0 auto;
+    font-size: 10px;
+}
+
+/* -----------------------------------HEAD-------------------------------------- */
+.header-nav {
+    position: relative;
+    background-color: cadetblue;
+    height: 70vh;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* height: 10vh; */
+    z-index: 1;
+    transition: 1s linear;
+}
+
+nav.active {
+    transform: translateY(0);
+
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.menu li {
+    position: relative;
+    list-style: none;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    line-height: 7vh;
+    color: white;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+
+.menu li a {
+    color: white;
+    text-decoration: none;
+}
+
+.avatar {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 50%;
+
+}
+
+.me {
+    position: absolute;
+    left: 5%;
+    top: 20%;
+    font-weight: bold;
+    text-transform: uppercase;
+
+
+}
+
+.me h1 {
+    font-size: 2.5rem;
+    font-family: 'Roboto Condensed',
+        sans-serif;
+    margin-bottom: 10px;
+}
+
+.me p {
+    font-size: 2rem;
+    font-family: 'Roboto',
+        sans-serif;
+}
+
+.bar {
+    position: fixed;
+    right: 2%;
+    top: 0;
+    z-index: 1;
+    font-size: 30px;
+    cursor: pointer;
+
+}
+
+.bar i {
+    transition: 1s linear;
+}
+
+.bar i.active {
+    color: white;
+}
+
+
+@media (orientation : landscape) {
+
+    .me {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .avatar {
+        width: 30%;
+        height: 70%;
+        left: 70%;
+        transform: translateX(-50%);
+    }
+
+    .bar {
+        right: 3%;
+        font-size: 3rem;
+    }
+
+}
+
+@media (min-width:700px) and (orientation : landscape) {
+    .menu li {
+        font-size: 2rem;
+    }
+
+    .me h1 {
+        font-size: 4rem;
+    }
+
+    .me p {
+        font-size: 3rem;
+    }
+
+    .bar {
+        font-size: 4rem;
+        right: 2%;
+    }
+
+    .avatar {
+        bottom: 5%;
+    }
+}
+
+@media (min-width:1024px) and (orientation : landscape) {
+    nav {
+        position: relative;
+        transform: translateY(0);
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .menu {
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    .menu li {
+        padding: 0 20px;
+    }
+
+    .me h1 {
+        font-size: 5rem;
+    }
+
+    .me p {
+        font-size: 4rem;
+    }
+
+    .bar {
+        font-size: 5rem;
+        display: none;
+    }
+
+    .menu li::after {
+        position: absolute;
+        content: "";
+        display: block;
+        background-color: white;
+        width: 80%;
+        height: 3px;
+        bottom: calc(50% - 20px);
+        left: -100%;
+        transition: 0.5s linear;
+    }
+
+
+    .menu li:hover::after {
+        left: 10%;
+    }
+
+}
+
+@media (min-width:1240px) and (orientation : landscape) {
+
+    .me h1 {
+        font-size: 7rem;
+    }
+
+    .me p {
+        font-size: 5.5rem;
+    }
+
+    .bar {
+        display: none;
+    }
+
+
+
+}
+
+
+@media(min-width:600px) and (orientation:portrait) {
+    .menu li {
+        font-size: 2rem;
+    }
+
+    .me h1 {
+        font-size: 4rem;
+    }
+
+    .me p {
+        font-size: 3.5rem;
+    }
+
+    .bar {
+        font-size: 5rem;
+    }
+}
+
+@media(min-width:1024px) and (orientation:portrait) {
+
+    nav {
+        position: relative;
+        transform: translateY(0);
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .menu {
+        justify-content: flex-end;
+        flex-direction: row;
+    }
+
+    .me h1 {
+        font-size: 7rem;
+    }
+
+    .me p {
+        font-size: 5rem;
+    }
+
+    .menu li {
+        padding: 0 20px;
+    }
+
+    .menu li::after {
+        content: "";
+        display: block;
+        clear: both;
+        position: absolute;
+        left: -100%;
+        bottom: calc(50% - 20px);
+        background-color: white;
+        transition: .5s linear;
+    }
+
+    .menu li:hover::after {
+        left: 10%;
+    }
+
+    .bar {
+        font-size: 6rem;
+        display: none;
+    }
+}
+
+
+
+/* ----------------------------------------Section 1--------------------------------------------- */
+
+section.first {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+div.about {
+    text-align: center;
+    height: 100%;
+}
+
+h1.about-me {
+    text-transform: uppercase;
+    font-family: 'Roboto Condensed',
+        sans-serif;
+    font-size: 2rem;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+}
+
+.about p {
+    font-size: 1.6rem;
+    font-family: 'Roboto',
+        sans-serif;
+    padding: 10px 20px;
+    color: white;
+    line-height: 4vh;
+    letter-spacing: 2px;
+    overflow: hidden;
+
+}
+
+@media (min-width:700px) and (orientation : landscape) {
+    h1.about-me {
+        font-size: 3rem;
+        padding: 20px 30px;
+
+    }
+
+    .about p {
+        font-size: 2rem;
+        line-height: 8vh;
+        letter-spacing: 5px;
+    }
+}
+
+@media (min-width:1240px) and (orientation : landscape) {
+    h1.about-me {
+        font-size: 4rem;
+        padding: 30px 30px;
+
+    }
+
+    .about p {
+        font-size: 3rem;
+        line-height: 10vh;
+    }
+}
+
+@media(min-width:600px) and (orientation:portrait) {
+    h1.about-me {
+        font-size: 3.4rem;
+        padding: 20px 30px;
+
+    }
+
+    .about p {
+        font-size: 2.5rem;
+        line-height: 5vh;
+        letter-spacing: 3px;
+    }
+}
+
+@media(min-width:1024px) and (orientation:portrait) {
+    h1.about-me {
+        font-size: 4rem;
+        padding: 20px 30px;
+
+    }
+
+    .about p {
+        font-size: 3rem;
+        line-height: 5vh;
+        letter-spacing: 3px;
+    }
+}
+
+/* /--------------------------------------------Section 2------------------------------- */
+
+/* section.second {
+    height: 40vh;
+} */
+
+h1.project {
+    font-size: 2rem;
+    font-family: 'Roboto Condensed',
+        sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+}
+
+img.photo {
+    overflow: hidden;
+    width: 100%;
+}
+
+p.project-text {
+    font-family: 'Roboto',
+        sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+}
+
+button.git {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.3rem;
+    padding: 20px 20px;
+    margin: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+button.git a {
+    text-decoration: none;
+    color: white
+}
+
+@media (min-width:700px) and (orientation : landscape) {
+    h1.project {
+        font-size: 3rem;
+        padding: 20px 30px;
+    }
+
+    p.project-text {
+        font-size: 2rem;
+        letter-spacing: 5px;
+    }
+
+    button.git {
+
+        font-size: 2rem;
+        padding: 20px 20px;
+        margin: 40px;
+    }
+}
+
+@media (min-width:1240px) and (orientation : landscape) {
+    h1.project {
+        font-size: 4rem;
+        padding: 30px 30px;
+    }
+
+    p.project-text {
+        font-size: 3rem;
+        letter-spacing: 5px;
+    }
+
+    button.git {
+
+        font-size: 3rem;
+        padding: 30px 30px;
+        margin: 40px;
+    }
+}
+
+@media(min-width:600px) and (orientation:portrait) {
+    h1.project {
+        font-size: 3.4rem;
+        padding: 20px 30px;
+    }
+
+    p.project-text {
+        font-size: 2.5rem;
+        letter-spacing: 5px;
+    }
+
+    button.git {
+
+        font-size: 2rem;
+        padding: 30px 30px;
+        margin: 40px;
+    }
+}
+
+@media(min-width:1024px) and (orientation:portrait) {
+    h1.project {
+        font-size: 4rem;
+    }
+
+    p.project-text {
+        font-size: 3rem;
+        letter-spacing: 6px;
+    }
+
+    button.git {
+
+        font-size: 3rem;
+    }
+}
+
+/* --------------------------------------------SEKCJA 3 ----------------------------------------------------------- */
+
+h1.hobby {
+    font-size: 2rem;
+    font-family: 'Roboto Condensed',
+        sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+}
+
+div.wrap {
+    display: flex;
+    flex-direction: column;
+    font-size: 0;
+
+}
+
+div.times {
+    position: relative;
+    flex-basis: calc(100% / 3);
+}
+
+img.photo-hobby {
+    opacity: 0.5;
+    width: 100%;
+}
+
+p.text-hobby {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Roboto',
+        sans-serif;
+    width: 100%;
+    text-align: center;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    color: black;
+}
+
+@media(orientation:landscape) {
+    div.wrap {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    div.times {
+        flex-basis: calc(100%/2);
+    }
+
+    img.photo-hobby {
+        height: 100%;
+
+    }
+}
+
+@media (orientation:landscape) and (min-width:700px) {
+    h1.hobby {
+        font-size: 3rem;
+        padding: 20px 30px;
+    }
+
+    p.text-hobby {
+        font-size: 2rem;
+        letter-spacing: 2px;
+    }
+}
+
+
+@media (min-width:1240px) and (orientation : landscape) {
+    h1.hobby {
+        font-size: 4rem;
+    }
+
+    p.text-hobby {
+        font-size: 3rem;
+    }
+}
+
+@media (orientation:portrait) and (min-width:600px) {
+    h1.hobby {
+        font-size: 3.4rem;
+        padding: 20px 30px;
+    }
+
+    p.text-hobby {
+        font-size: 2.5rem;
+        letter-spacing: 5px;
+    }
+}
+
+@media (orientation:portrait) and (min-width:1024px) {
+    div.wrap {
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: 100%;
+    }
+
+    div.times {
+        flex-basis: calc(100%/2);
+
+    }
+
+    img.photo-hobby {
+        height: 100%;
+    }
+
+    h1.hobby {
+        font-size: 4rem;
+    }
+
+    p.text-hobby {
+        font-size: 3rem;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+/* -------------------------------------Sekcja 4------------------------------------------------------------------ */
+
+section.last {
+    background-color: black;
+    padding: 30px 20px;
+}
+
+h1.last {
+    font-size: 2rem;
+    color: white;
+    font-family: 'Roboto Condensed',
+        sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+div.contact {
+    padding-top: 20px;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.contact input,
+.contact button,
+.contact textarea {
+
+    width: 100%;
+    margin-bottom: 20px;
+    font-family: 'Roboto Condensed',
+        sans-serif;
+    font-size: 1.2rem;
+    padding: 5px;
+}
+
+
+div.contact input {
+    height: 3.6rem;
+}
+
+button.submit {
+    line-height: 4rem;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+}
+
+div.socials {
+    display: flex;
+    justify-content: space-around;
+}
+
+div.social i {
+    font-size: 6rem;
+}
+
+@media(orientation:landscape) {
+    div.contact {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    form {
+        flex-basis: 60%;
+    }
+
+    div.socials {
+        flex-direction: column;
+        justify-content: space-between;
+        align-content: space-between;
+    }
+}
+
+@media(orientation:landscape) and (min-width:700px) {
+    h1.last {
+        font-size: 3rem;
+    }
+
+    .contact input,
+    .contact button,
+    .contact textarea {
+        font-size: 2rem;
+    }
+
+}
+
+@media(orientation:landscape) and (min-width:1240px) {
+    h1.last {
+        font-size: 4rem;
+    }
+
+    .contact input,
+    .contact button,
+    .contact textarea {
+        font-size: 3rem;
+    }
+
+    div.social i {
+        font-size: 9rem;
+    }
+}
+
+@media (orientation:portrait) and (min-width:600px) {
+    h1.last {
+        font-size: 3.4rem;
+    }
+
+    .contact input,
+    .contact button,
+    .contact textarea {
+        font-size: 2.5rem;
+    }
+
+    div.social i {
+        font-size: 8rem;
+    }
+}
+
+@media (orientation:portrait) and (min-width:1024px) {
+    div.contact {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    form {
+        flex-basis: 60%;
+    }
+
+    div.socials {
+        flex-direction: column;
+        justify-content: space-around;
+        align-content: space-around;
+        height: 100%;
+    }
+
+
+    h1.last {
+        font-size: 4rem;
+    }
+
+    .contact input,
+    .contact button,
+    .contact textarea {
+        font-size: 3rem;
+        margin-bottom: 30px;
+        padding: 20px;
+    }
+
+    div.social i {
+        font-size: 12rem;
+        margin-bottom: 10px;
+    }
+}
