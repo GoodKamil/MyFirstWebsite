@@ -663,6 +663,10 @@ div.contact {
     padding: 5px;
 }
 
+.active {
+    border-color: red;
+}
+
 
 div.contact input {
     height: 3.6rem;
